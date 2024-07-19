@@ -1,4 +1,4 @@
-## Proyecto Final Modelamiento
+# Proyecto Final Modelamiento
 
 
 ### Tareas:
@@ -53,12 +53,13 @@ Implementar las funciones del CRUD para realizar la función requerida, hacer un
 ## Estructura del proyecto
 
 	proyecto_final/
+
 	│
 	├── App.java
 	│
 	├── model/
 	│   ├── Producto.java
-	│   ├── ConnectionDB.java
+	│   ├── DbConexion.java
 	│   └── order/
 	│       ├── OrderProductsAZ.java
 	│   └── crud/
@@ -85,5 +86,5 @@ Implementar las funciones del CRUD para realizar la función requerida, hacer un
 
 
 
-### Diseno
+### Disenño
 ![Programa](/src/main/resources/project/view/img/diseno_programa.png)
