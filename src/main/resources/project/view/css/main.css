@@ -27,3 +27,20 @@ Para las ventanas de operaciones
 	-fx-border-color: black;         /* Establece el color del borde */
 }
 
+.color_texto_comboBox{
+	-fx-text-fill: white; /* Color del texto en las opciones desplegables */
+	-fx-font-weight: bold; /* Peso de la fuente en las opciones desplegables */
+}
+
+
+/*
+Tablas
+*/
+
+.notStyleTable {
+	   /* Quitar el borde visible */
+	-fx-focus-color: transparent;    /* Color del foco */
+
+}
+
+

@@ -3,6 +3,8 @@ module project {
     requires javafx.fxml;
     requires java.sql;
     requires javafx.graphics;
+    requires com.zaxxer.hikari;
+    requires org.slf4j;
 
     opens project to javafx.fxml;
     opens project.controller;

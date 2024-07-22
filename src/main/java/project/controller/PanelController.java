@@ -41,7 +41,7 @@ public class PanelController implements Initializable {
 
 	@FXML
 	void BtnConsultarProductos(ActionEvent event) {
-		System.out.println("Hola XD");
+		w_consulteP.show();
 	}
 
 	@FXML

@@ -28,7 +28,7 @@ public class App extends Application {
         controller.reciveWindowsOptions(GenerateFxmlTable("ventana_addP", "Agregar Producto"),
                 GenerateFxmlTable("ventana_deleteP", "Eliminar Producto"),
                 GenerateFxmlTable("ventana_modifyP", "Actualizar Producto"),
-                GenerateFxmlTable("ventana_consultationP", "EN PROCESO"));
+                GenerateFxmlTable("ventana_consultationP", "Consultar Productos"));
         stage.show();
     }
 
