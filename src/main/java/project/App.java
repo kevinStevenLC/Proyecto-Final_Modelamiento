@@ -24,7 +24,11 @@ public class App extends Application {
         PanelController controller = loader.getController();
         // Enviando panel de control.
         controller.recivePanel(stage);
-        // seguir enviando escenarios
+        // enviando las 4 ventanas del CRUD
+        controller.reciveWindowsOptions(GenerateFxmlTable("ventana_addP", "Agregar Producto"),
+                GenerateFxmlTable("ventana_deleteP", "Eliminar Producto"),
+                GenerateFxmlTable("ventana_modifyP", "Actualizar Producto"),
+                GenerateFxmlTable("ventana_consultationP", "EN PROCESO"));
         stage.show();
     }
 

@@ -1,0 +1,29 @@
+.border_frame {
+	-fx-border-style: solid;
+	-fx-border-color: black;
+	-fx-border-width: 2px;
+	-fx-border-radius: 8px;
+}
+
+.separator {
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;
+}
+
+.separator .line {
+	-fx-background-color: black; /* Cambia 'red' por el color que desees */
+}
+
+
+/*
+Para las ventanas de operaciones
+*/
+
+.input_line_down {
+	-fx-background-color: transparent;
+	-fx-border-color: transparent;   /* Esta línea es redundante y puede ser eliminada */
+	-fx-border-style: dotted;
+	-fx-border-width: 0px 0px 3px 0px;     /* Esto establece el borde solo en la parte inferior */
+	-fx-border-color: black;         /* Establece el color del borde */
+}
+

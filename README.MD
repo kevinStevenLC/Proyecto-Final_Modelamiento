@@ -25,10 +25,10 @@ Eliminar Productos por ID,
 Modificar Información de productos(no modificar id);
 Mostrar el resultado por consola para cada método con screenshot.
 
-### 3-Crear Metodos (consultar y ordenar por nombre A-Z)
+### 3-Crear Metodos (consultar y ordenar por Categorias)
 Conectarse a la base de datos y crear métodos de:
 Consultar(Por id, usar Join para unir los campos de la tabla Producto y Categoría en una sola tabla y mostrar por consola el resultado).
-Ordenar productos.
+Ordenar productos(metodos).
 Mostrar el resultado por consola para cada método con screenshot.
 
 
@@ -60,8 +60,6 @@ Implementar las funciones del CRUD para realizar la función requerida, hacer un
 	├── model/
 	│   ├── Producto.java
 	│   ├── DbConexion.java
-	│   └── order/
-	│       ├── OrderProductsAZ.java
 	│   └── crud/
 	│       ├── addP.java
 	│       ├── deleteP.java
