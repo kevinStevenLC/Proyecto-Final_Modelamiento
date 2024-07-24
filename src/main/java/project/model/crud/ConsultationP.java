@@ -40,7 +40,8 @@ public class ConsultationP {
 				int inv = rs.getInt("stock");
 				int categoria = rs.getInt("categoria");
 
-				Producto objProductos = new Producto(idProducto, descripcionP, precio, inv, categoria);
+				Producto objProductos = new Producto(descripcionP, precio, inv, categoria);
+				objProductos.setIdProducto(idProducto);
 				objlProductos.add(objProductos); // Añadir producto a la lista
 			}
 
@@ -72,7 +73,8 @@ public class ConsultationP {
 				int inv = rs.getInt("Inventario");
 				int categoria = rs.getInt("Categoria");
 
-				Producto objProductos = new Producto(idProducto, descripcionP, precio, inv, categoria);
+				Producto objProductos = new Producto(descripcionP, precio, inv, categoria);
+				objProductos.setIdProducto(idProducto);
 				objlProductos.add(objProductos); // Añadir producto a la lista
 			}
 
@@ -105,7 +107,8 @@ public class ConsultationP {
 				int inv = rs.getInt("Inventario");
 				int categoria = rs.getInt("Categoria");
 
-				Producto objProductos = new Producto(idProducto, descripcionP, precio, inv, categoria);
+				Producto objProductos = new Producto(descripcionP, precio, inv, categoria);
+				objProductos.setIdProducto(idProducto);
 				objlProductos.add(objProductos); // Añadir producto a la lista
 			}
 
@@ -138,7 +141,8 @@ public class ConsultationP {
 				int inv = rs.getInt("Inventario");
 				int categoria = rs.getInt("Categoria");
 
-				Producto objProductos = new Producto(idProducto, descripcionP, precio, inv, categoria);
+				Producto objProductos = new Producto(descripcionP, precio, inv, categoria);
+				objProductos.setIdProducto(idProducto);
 				objlProductos.add(objProductos); // Añadir producto a la lista
 			}
 
@@ -170,7 +174,8 @@ public class ConsultationP {
 				int inv = rs.getInt("Inventario");
 				int categoria = rs.getInt("Categoria");
 
-				Producto objProductos = new Producto(idProducto, descripcionP, precio, inv, categoria);
+				Producto objProductos = new Producto(descripcionP, precio, inv, categoria);
+				objProductos.setIdProducto(idProducto);
 				objlProductos.add(objProductos); // Añadir producto a la lista
 			}
 

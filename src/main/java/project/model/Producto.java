@@ -7,8 +7,7 @@ public class Producto {
 	private int inv;
 	private int categoria;
 
-	public Producto(int idProducto, String descripcionP, float precio, int inv, int categoria) {
-		this.idProducto = idProducto;
+	public Producto(String descripcionP, float precio, int inv, int categoria) {
 		this.descripcionP = descripcionP;
 		this.precio = precio;
 		this.inv = inv;
