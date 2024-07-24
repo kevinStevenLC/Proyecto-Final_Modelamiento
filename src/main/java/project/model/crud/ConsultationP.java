@@ -11,6 +11,16 @@ import project.model.Producto;
 
 public class ConsultationP {
 
+	private Connection cnx;
+
+	public ConsultationP() {
+		try {
+			this.cnx = DbConexion.conexion_db();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+
 	public List<Producto> getDefaultProducts() {
 		List<Producto> objlProductos = new ArrayList<>();
 		String query = "SELECT idProducto, descripcion, precio, stock, id_Categoria AS categoria \n"
@@ -18,9 +28,6 @@ public class ConsultationP {
 				"FROM Producto;";
 
 		try {
-			DbConexion c = new DbConexion();
-			Connection cnx = c.conexion_db();
-
 			Statement statement = cnx.createStatement();
 
 			ResultSet rs = statement.executeQuery(query);
@@ -36,8 +43,6 @@ public class ConsultationP {
 				Producto objProductos = new Producto(idProducto, descripcionP, precio, inv, categoria);
 				objlProductos.add(objProductos); // Añadir producto a la lista
 			}
-
-			cnx.close();
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -55,9 +60,6 @@ public class ConsultationP {
 				"id_Categoria = 1;";
 
 		try {
-			DbConexion c = new DbConexion();
-			Connection cnx = c.conexion_db();
-
 			Statement statement = cnx.createStatement();
 
 			ResultSet rs = statement.executeQuery(query);
@@ -73,8 +75,6 @@ public class ConsultationP {
 				Producto objProductos = new Producto(idProducto, descripcionP, precio, inv, categoria);
 				objlProductos.add(objProductos); // Añadir producto a la lista
 			}
-
-			cnx.close();
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -92,8 +92,6 @@ public class ConsultationP {
 
 		try { // para mandar el stage o panel esa vaina// mira ahi si salen los de la
 					// categoria cocina XD
-			DbConexion c = new DbConexion();
-			Connection cnx = c.conexion_db();
 
 			Statement statement = cnx.createStatement();
 
@@ -110,8 +108,6 @@ public class ConsultationP {
 				Producto objProductos = new Producto(idProducto, descripcionP, precio, inv, categoria);
 				objlProductos.add(objProductos); // Añadir producto a la lista
 			}
-
-			cnx.close();
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -129,8 +125,6 @@ public class ConsultationP {
 
 		try { // para mandar el stage o panel esa vaina// mira ahi si salen los de la
 					// categoria cocina XD
-			DbConexion c = new DbConexion();
-			Connection cnx = c.conexion_db();
 
 			Statement statement = cnx.createStatement();
 
@@ -147,8 +141,6 @@ public class ConsultationP {
 				Producto objProductos = new Producto(idProducto, descripcionP, precio, inv, categoria);
 				objlProductos.add(objProductos); // Añadir producto a la lista
 			}
-
-			cnx.close();
 
 		} catch (Exception ex) {
 			ex.printStackTrace();
@@ -166,9 +158,6 @@ public class ConsultationP {
 
 		try { // para mandar el stage o panel esa vaina// mira ahi si salen los de la
 					// categoria cocina XD
-			DbConexion c = new DbConexion();
-			Connection cnx = c.conexion_db();
-
 			Statement statement = cnx.createStatement();
 
 			ResultSet rs = statement.executeQuery(query);
@@ -184,8 +173,6 @@ public class ConsultationP {
 				Producto objProductos = new Producto(idProducto, descripcionP, precio, inv, categoria);
 				objlProductos.add(objProductos); // Añadir producto a la lista
 			}
-
-			cnx.close();
 
 		} catch (Exception ex) {
 			ex.printStackTrace();

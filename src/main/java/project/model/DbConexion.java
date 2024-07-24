@@ -2,45 +2,69 @@ package project.model;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-//import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class DbConexion {
-	String bd = "b1bnfkha32b26wpcjpsh";
-	String host = "b1bnfkha32b26wpcjpsh-mysql.services.clever-cloud.com";
-	String url = "jdbc:mysql://" + host + ":3306";
-	String user = "udypiwtnffa0xvx7";
-	String pass = "COTivAtmSCLYS0OoGEEg";
-	String driver = "com.mysql.cj.jdbc.Driver";
+	// Constantes de la base de datos
+	private static final String BD = "b1bnfkha32b26wpcjpsh";
+	private static final String HOST = "b1bnfkha32b26wpcjpsh-mysql.services.clever-cloud.com";
+	private static final String URL = "jdbc:mysql://" + HOST + ":3306";
+	private static final String USER = "udypiwtnffa0xvx7";
+	private static final String PASS = "COTivAtmSCLYS0OoGEEg";
+	private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
-	Connection conn;
+	// Conexión única
+	private static Connection conn;
 
-	public Connection conexion_db() {
-		try {
-			// cargar controlador JDBC
-			Class.forName(driver);
+	// Constructor privado para evitar instanciación
+	private DbConexion() {
+	}
 
-			// establecer conexion
-
-			conn = DriverManager.getConnection(url + "/" + bd, user, pass);
-
-			System.out.println("Conexion Establecida.");
-
-		} catch (ClassNotFoundException | SQLException sqlE) {
-			System.err.println("Error de conexion: " + sqlE.getMessage());
-			Logger.getLogger(DbConexion.class.getName()).log(Level.SEVERE, null, sqlE);
-			return null;
+	/**
+	 * Obtiene la conexión única a la base de datos.
+	 * 
+	 * @return la conexión a la base de datos.
+	 * @throws SQLException si ocurre un error al establecer la conexión.
+	 */
+	public static Connection conexion_db() throws SQLException {
+		if (conn == null || conn.isClosed()) {
+			try {
+				// Cargar controlador JDBC
+				Class.forName(DRIVER);
+				// Establecer conexión
+				conn = DriverManager.getConnection(URL + "/" + BD, USER, PASS);
+				System.out.println("Conexion Establecida.");
+			} catch (ClassNotFoundException | SQLException sqlE) {
+				System.err.println("Error de conexion: " + sqlE.getMessage());
+				Logger.getLogger(DbConexion.class.getName()).log(Level.SEVERE, null, sqlE);
+				return null;
+			}
 		}
-
 		return conn;
 	}
 
-	public static void main(String[] args) {
-		DbConexion db_conexion = new DbConexion();
+	/**
+	 * Cierra la conexión a la base de datos.
+	 * 
+	 * @throws SQLException si ocurre un error al cerrar la conexión.
+	 */
+	public static void closeConection_db() throws SQLException {
+		if (conn != null && !conn.isClosed()) {
+			try {
+				conn.close();
+				System.out.println("Conexion Cerrada.");
+			} catch (SQLException sqlE) {
+				System.err.println("Error al cerrar la conexion: " + sqlE.getMessage());
+				Logger.getLogger(DbConexion.class.getName()).log(Level.SEVERE, null, sqlE);
+			}
+		}
+	}
 
-		db_conexion.conexion_db();
-
+	public static void main(String[] args) throws SQLException {
+		// Probar la conexión a la base de datos
+		// Connection db_conexion = DbConexion.conexion_db();
+		DbConexion.closeConection_db();
 	}
 }

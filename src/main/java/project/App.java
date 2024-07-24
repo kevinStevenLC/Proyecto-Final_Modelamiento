@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import project.controller.PanelController;
+import project.model.DbConexion;
 
 import java.io.IOException;
 
@@ -41,6 +42,12 @@ public class App extends Application {
         stage.setTitle(title);
 
         return stage;
+    }
+
+    @Override
+    public void stop() throws Exception {
+        // Cerrar la conexion a la base de datos.
+        DbConexion.closeConection_db();
     }
 
     public static void main(String[] args) {
