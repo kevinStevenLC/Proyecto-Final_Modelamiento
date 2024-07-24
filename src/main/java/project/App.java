@@ -23,13 +23,11 @@ public class App extends Application {
         stage.setTitle("Panel de control");
         // Panel de control
         PanelController controller = loader.getController();
+        // cargar el fxml de consultar productos, por que son varios y demora en cargar
+        controller.reciveConsultationProduct(GenerateFxmlTable("ventana_consultationP", "Consultar Productos"));
+        controller.setAppMain(this); // enviando el App
         // Enviando panel de control.
         controller.recivePanel(stage);
-        // enviando las 4 ventanas del CRUD
-        controller.reciveWindowsOptions(GenerateFxmlTable("ventana_addP", "Agregar Producto"),
-                GenerateFxmlTable("ventana_deleteP", "Eliminar Producto"),
-                GenerateFxmlTable("ventana_modifyP", "Actualizar Producto"),
-                GenerateFxmlTable("ventana_consultationP", "Consultar Productos"));
         stage.show();
     }
 
