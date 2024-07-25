@@ -20,7 +20,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <TextField minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" styleClass="input_line_down" stylesheets="@../css/main.css" />
+                  <TextField fx:id="txtDescripcion" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" styleClass="input_line_down" stylesheets="@../css/main.css" />
                </children>
                <VBox.margin>
                   <Insets top="30.0" />
@@ -33,17 +33,17 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <TextField minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="52.0" styleClass="input_line_down" stylesheets="@../css/main.css" />
+                  <TextField fx:id="txtCantidad" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="52.0" styleClass="input_line_down" stylesheets="@../css/main.css" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="39.0" prefHeight="29.0" prefWidth="286.0">
-               <children>
+               <children>  
                   <Label alignment="BOTTOM_LEFT" prefHeight="29.0" prefWidth="46.0" text="Precio: ">
                      <font>
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <TextField minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="66.0" styleClass="input_line_down" stylesheets="@../css/main.css" />
+                  <TextField fx:id="txtPrecio" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="66.0" styleClass="input_line_down" stylesheets="@../css/main.css" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="68.0" prefHeight="29.0" prefWidth="286.0">
@@ -53,7 +53,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <TextField minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="170.0" styleClass="input_line_down" stylesheets="@../css/main.css">
+                  <TextField fx:id="txtCategoria" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="170.0" styleClass="input_line_down" stylesheets="@../css/main.css">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -68,7 +68,7 @@
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="62.0" prefWidth="286.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="273.0" style="-fx-background-color: #B2F2BB;" styleClass="border_frame" stylesheets="@../css/main.css" text="Agregar Producto">
+                  <Button onAction="#btnAgregarProducto" mnemonicParsing="false" prefHeight="31.0" prefWidth="273.0" style="-fx-background-color: #B2F2BB;" styleClass="border_frame" stylesheets="@../css/main.css" text="Agregar Producto">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>

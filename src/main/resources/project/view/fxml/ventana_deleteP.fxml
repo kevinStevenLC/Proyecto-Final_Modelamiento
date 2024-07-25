@@ -20,7 +20,7 @@
                         <Font name="System Bold" size="13.0" />
                      </font>
                   </Label>
-                  <TextField minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="46.0" styleClass="input_line_down" stylesheets="@../css/main.css" />
+                  <TextField fx:id="txtIdProducto" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="46.0" styleClass="input_line_down" stylesheets="@../css/main.css" />
                </children>
                <VBox.margin>
                   <Insets top="30.0" />
@@ -28,7 +28,7 @@
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="62.0" prefWidth="286.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="31.0" prefWidth="273.0" style="-fx-background-color: #FF8787;" styleClass="border_frame" stylesheets="@../css/main.css" text="Eliminar Producto">
+                  <Button mnemonicParsing="false" onAction="#btnEliminarProducto" prefHeight="31.0" prefWidth="273.0" style="-fx-background-color: #FF8787;" styleClass="border_frame" stylesheets="@../css/main.css" text="Eliminar Producto">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>

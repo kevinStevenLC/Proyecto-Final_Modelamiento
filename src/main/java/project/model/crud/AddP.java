@@ -33,8 +33,6 @@ public class AddP {
 			if (rowsInserted > 0) {
 				System.out.println("Producto agregado exitosamente!");
 			}
-
-			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

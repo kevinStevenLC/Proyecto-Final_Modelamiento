@@ -35,8 +35,6 @@ public class ModifyP {
 			if (rowsUpdated > 0) {
 				System.out.println("Producto actualizado exitosamente!");
 			}
-
-			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

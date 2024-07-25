@@ -29,8 +29,6 @@ public class DeleteP {
 			if (rowsDeleted > 0) {
 				System.out.println("Producto eliminado exitosamente!");
 			}
-
-			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
