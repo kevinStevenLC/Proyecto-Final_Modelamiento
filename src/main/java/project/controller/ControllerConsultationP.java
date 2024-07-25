@@ -5,7 +5,9 @@ import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+
 import javafx.fxml.Initializable;
+
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.cell.PropertyValueFactory;
 
@@ -13,7 +15,6 @@ import java.net.URL;
 
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-
 import project.model.Producto;
 import project.model.crud.ConsultationP;
 
@@ -64,7 +65,7 @@ public class ControllerConsultationP implements Initializable {
 		cargarProductos(listDefect(list_P));
 	}
 
-	private void cargarProductos(List<Producto> ls_P) {
+	public void cargarProductos(@SuppressWarnings("exports") List<Producto> ls_P) {
 		tblVProducts.getItems().clear(); // Limpiar la tabla antes de agregar nuevos datos
 		tblVProducts.getItems().addAll(ls_P); // Agregar productos a la tabla
 	}
@@ -74,42 +75,30 @@ public class ControllerConsultationP implements Initializable {
 		return ls_P;
 	}
 
-	@FXML
-	void selectionMethod(ActionEvent event) {
-
+	public void actualizarTablaEntidades() {
 		String opcElejida = CbOrdB.getValue();
-
-		// Validar la opción seleccionada y cargar productos según la opción
 		switch (opcElejida) {
 			case "Hogar":
-				// Limpiar la tabla antes de cargar nuevos datos
-				tblVProducts.getItems().clear();
-				list_P = objProductoR.getProductsForHogar(); // Asegúrate de que este método existe
-				cargarProductos(list_P);
+				list_P = objProductoR.getProductsForHogar();
 				break;
 			case "Cocina":
-				// Limpiar la tabla antes de cargar nuevos datos
-				tblVProducts.getItems().clear();
-				list_P = objProductoR.getProductsForKitchen(); // Puedes usar este método u otro si tienes
-				cargarProductos(list_P);
+				list_P = objProductoR.getProductsForKitchen();
 				break;
 			case "Electronica":
-				// Limpiar la tabla antes de cargar nuevos datos
-				tblVProducts.getItems().clear();
-				list_P = objProductoR.getProductsForElectronics(); // Puedes usar este método u otro si tienes
-				cargarProductos(list_P);
+				list_P = objProductoR.getProductsForElectronics();
 				break;
 			case "Juguete":
-				// Limpiar la tabla antes de cargar nuevos datos
-				tblVProducts.getItems().clear();
-				list_P = objProductoR.getProductsForToys(); // Puedes usar este método u otro si tienes
-				cargarProductos(list_P);
+				list_P = objProductoR.getProductsForToys();
 				break;
 			default:
-				break;
-
+				return;
 		}
 
+		cargarProductos(list_P);
 	}
 
+	@FXML
+	public void selectionMethod(@SuppressWarnings("exports") ActionEvent event) {
+		actualizarTablaEntidades();
+	}
 }

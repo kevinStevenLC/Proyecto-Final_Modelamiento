@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import project.controller.ControllerConsultationP;
 import project.controller.PanelController;
 import project.model.DbConexion;
 
@@ -15,6 +16,8 @@ import java.io.IOException;
  */
 public class App extends Application {
 
+    ControllerConsultationP controller;
+
     @Override
     public void start(@SuppressWarnings("exports") Stage stage) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("view/fxml/pagePanel.fxml"));
@@ -23,8 +26,10 @@ public class App extends Application {
         stage.setTitle("Panel de control");
         // Panel de control
         PanelController controller = loader.getController();
+
         // cargar el fxml de consultar productos, por que son varios y demora en cargar
         controller.reciveConsultationProduct(GenerateFxmlTable("ventana_consultationP", "Consultar Productos"));
+
         controller.setAppMain(this); // enviando el App
         // Enviando panel de control.
         controller.recivePanel(stage);
