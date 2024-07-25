@@ -101,16 +101,16 @@ Implementar las funciones del CRUD para realizar la función requerida, hacer un
 
 ![Programa](/src/main/resources/project/view/img/progress/resultado3.png)
 
-### Base de Datos (nube): 
-* CleverCloud
+### Base de Datos (nube)
+### CleverCloud:
 ![Programa](/src/main/resources/project/view/img/Database-info/base-de-datos-nube.png)
 .
-* Tabla de Categorias
+### Tabla de Categorias:
 ![Programa](/src/main/resources/project/view/img/Database-info/tabla_categoria.png)
 .
-* Tabla de Productos
+### Tabla de Productos:
 ![Programa](/src/main/resources/project/view/img/Database-info/tabla_producto.png)
 .
-* Diagrama ER
+### Diagrama ER:
 ![Programa](/src/main/resources/project/view/img/ER/Diagrama%20ER.png)
 .
